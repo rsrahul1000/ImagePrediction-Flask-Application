@@ -8,5 +8,10 @@
       </form>
       <h3> Error : {{args}}</h3>
 
+      <hr>
+      <form action = "{{url_for('processing')}}" method = "POST">
+        <button type="submit" value="Processing"> Processing </button>
+      </form>
+
    </body>
 </html>

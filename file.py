@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from werkzeug.utils import secure_filename
 import os 
 
-
 UPLOAD_FOLDER = 'D:\Research\Clock_\static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -29,8 +28,8 @@ def uploader():
             flash('No file selected')
             return render_template('upload.html', args = 'File Not found')
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], "test.png"))
             file.close()
             return render_template('upload.html', args = 'File Uploaded Successfully')
         return render_template('upload.html', args = 'File Not of Proper Format')
@@ -39,6 +38,9 @@ def uploader():
 def index():
     return render_template('upload.html', args = 'Reupload Pls')
 
+@app.route('/processing', methods=['POST'])
+def processing():
+    return render_template('display.html', args = 'Starting to Pre-Process')
 
 if __name__ == '__main__':
    app.secret_key = os.urandom(24)
