@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            Time Date
+        </title>
+    </head>
+    <body>
+        <center><h1>Current Time</h1></center>
+        <hr>
+        <hr>
+        <form action="{{url_for('timing')}}"method="post">
+            <button type="submit" value="Current Time"> Current Timming </button>
+        </form>
+        {{current_timmings}}
+    </body>
+</html>
+

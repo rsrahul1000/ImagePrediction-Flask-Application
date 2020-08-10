@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="{{url_for('upload_file')}}"method="post">
+    <input type="text" name="Income" placeholder="Income" required="required" />
+    <input type="text" name="Household_size" placeholder="Household_size" required="required" />
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict Monthly Expenses</button>
+</form>
+<h1>You have {{second_arg}} House hold size</h1>
+<h2>You have {{first_arg}} Income </h2>
+
+<hr>
+<h2>Uploading files</h2>
+
+<!-- <form action="{{url_for('upload_file')}}" method="post">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+  </form> -->
+  
+</body>
+</html>
